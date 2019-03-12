@@ -1,0 +1,11 @@
+/node_modules
+/public/peliculas
+/storage/*.key
+/vendor
+/.idea
+*.DS_Store
+.env
+/public/js
+/public/css
+/public/fonts
+
