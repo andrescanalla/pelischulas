@@ -215,7 +215,7 @@
         mounted() {
             this.getVideo();
             this.fetchComments();
-            console.log('Video Details Component mounted.', this.id, this.video.related);
+            console.log('Video Details Component mounted.', this.id, this.video.related, 'this.video.url');
         },
 
         methods: {
@@ -224,15 +224,15 @@
                 axios.get('/api/videos/' + this.id + '?related=true' ).then((res) => {
                     this.$Progress.finish();
                     this.video = res.data;
-                    console.log('video-url:', this.isMovie(this.video.url).substring(0, 4));
+                    console.log('video-url:', this.video.url);
 
                     // set the youtube id if its youtube video
                     this.movieId = this.isMovie(this.video.url);
                     this.youtubeId = this.isYoutube(this.video.url); 
-                    if (this.movieId.substring(0,4)!=='http'){
+                    if (this.movieId && this.movieId.substring(0,4)!=='http'){
                         this.movieId = '/peliculas/'+ this.movieId;
                     }
-                    console.log('MovieIDS:',this.movieId, this.video.url);                   
+                    console.log('MovieIDS:',this.movieId, 'VideoIDS:', this.video.url);                   
 
                     // change the title of page
                     window.document.title = this.video.title;
@@ -310,6 +310,7 @@
                 let matches = url.match(pattern);
                 if(matches){
                     return matches[1];
+                    console.log('resultado:', matches[1]);
                 }
                 return false;
             },
