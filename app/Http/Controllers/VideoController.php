@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Category;
 use App\Channel;
 use App\Video;
 use App\API\ApiHelper;
 use App\Repos\Repository;
 use Illuminate\Http\Request;
+
 
 class VideoController extends Controller
 {
@@ -75,7 +75,7 @@ class VideoController extends Controller
             $paginated['channels'] = Channel::select('id', 'name', 'user_id')
                 ->where('user_id', $request->get('user'))
                 ->get();                
-        }
+        }       
         
         return $paginated;
     }
