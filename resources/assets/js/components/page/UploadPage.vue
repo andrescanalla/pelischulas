@@ -170,11 +170,14 @@
                 
                 console.log('post:', vm.video);
 
+                this.$Progress.start();
                 axios.post('/api/videos', vm.video).then(function (res) {
+                    this.$Progress.finish();
                     vm.video = {};
                     vm.loading = false;
                     alert('Video has been uploaded, Go to home page to see it.');
                 }).catch(function (error) {
+                    this.$Progress.finish();
                     console.log(error);
                     vm.loading = false;
                 });
