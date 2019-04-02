@@ -224,7 +224,7 @@
                 axios.get('/api/videos/' + this.id + '?related=true' ).then((res) => {
                     this.$Progress.finish();
                     this.video = res.data;
-                    console.log('video-url:', this.isMovie(this.video.url).substring(0, 4));
+                    console.log('video-url:', this.isMovie(this.video.url));
 
                     // set the youtube id if its youtube video
                     this.movieId = this.isMovie(this.video.url);
