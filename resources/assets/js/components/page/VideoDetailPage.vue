@@ -310,7 +310,7 @@
                 let matches = url.match(pattern);
                 if(matches){
                     console.log('resultado:', matches[1]);
-                    return matches[1];
+                    return url;
                 }
                 return false;
             },
