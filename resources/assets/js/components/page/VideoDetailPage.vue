@@ -113,7 +113,7 @@
 
                                 <h5 v-show="comments.data.length">COMMENTS • {{ comments.data.length }}</h5>
 
-                                <div class="media" v-for="(comment, index) in comments.data">
+                                <div class="media" v-for="(comment, index) in comments.data" :key="comment.id">
                                     <div class="media-left media-top">
                                         <a href="">
                                             <img width="48" class="media-object" :src="comment.user.avatar" :alt="comment.user.name">
@@ -151,7 +151,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-body video-aside">
-                        <div class="media" v-for="related in video.related">
+                        <div class="media" v-for="related in video.related" :key="related.id">
                             <div class="media-left">
                                 <router-link :to="{ name: 'VideoDetailPage', params: { id: related.id, slug: $root.slug(related.title) }}">
                                     <img class="media-object" :src="related.thumbnail" :alt="related.title">
