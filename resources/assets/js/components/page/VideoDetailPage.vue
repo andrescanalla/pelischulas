@@ -5,7 +5,7 @@
             <div class="col-md-8">
                 <div class="video-player">
                     <div v-if="youtubeId" class="videoWrapper">
-                        <iframe width="560" height="349" :src="'https://www.youtube.com/embed/' + youtubeId + '?rel=0&hd=1&autoplay=1&showinfo=0'" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="349" :src="'https://www.youtube.com/embed/' + youtubeId + '?rel=0&hd=1&autoplay=1&showinfo=0&origin=https://pelischulas.herokuapp.com'" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div v-if="movieId" class="videoWrapper">
                              <iframe width="560" height="349" :src="movieId + '?rel=0'" frameborder="0" allowfullscreen autoplay=1></iframe>                        
