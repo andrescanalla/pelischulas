@@ -17,4 +17,11 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Force https on heroku...
+    # Important fact: X-forwarded-Proto will exist at your heroku dyno but wont locally.
+    # Hence we want: "if x-forwarded exists && if its not https, then rewrite it":
+    RewriteCond %{HTTP:X-Forwarded-Proto} .
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
