@@ -215,7 +215,7 @@
         mounted() {
             this.getVideo();
             this.fetchComments();
-            console.log('Video Details Component mounted.', this.id, this.video.related);
+            console.log('Video Details Component mounted.', this.id, this.video.related, 'youtubeID:',this.youtubeId);
         },
 
         methods: {
