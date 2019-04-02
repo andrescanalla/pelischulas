@@ -66,7 +66,7 @@
                     <div class="panel-body">
                         <h5 class="text-dark">Published on {{ video.updated_at }}</h5>
 
-                        <div class="desc-text"><p>{{ video.description }}</p></div></p>
+                        <div class="desc-text"><p>{{ video.description }}</p></div>
                         <h5 class="text-dark">Category <a href="">{{ video.category.name }}</a></h5>
                     </div>
                 </div>
