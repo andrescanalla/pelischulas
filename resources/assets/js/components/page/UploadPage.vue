@@ -194,7 +194,7 @@
             validateTrailerUrl() {
               let videoCode = this.isYoutube(this.imageThumb);              
               if ( videoCode ) {
-                  this.videoThumb = 'http://img.youtube.com/vi/'+ videoCode +'/mqdefault.jpg';
+                  this.videoThumb = 'https://img.youtube.com/vi/'+ videoCode +'/mqdefault.jpg';
               } else {                                     
                     alert('URL is not a valid youtube video url.');
               }
