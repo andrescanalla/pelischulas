@@ -183,7 +183,7 @@
             validateYoutubeUrl() {
               let videoCode = this.isYoutube(this.video.url);              
               if ( videoCode ) {
-                  this.videoThumb = 'http://img.youtube.com/vi/'+ videoCode +'/mqdefault.jpg';
+                  this.videoThumb = 'https://img.youtube.com/vi/'+ videoCode +'/mqdefault.jpg';
                   this.movieId = false;
                   this.relatedId = true;                  
               } else {                                     
