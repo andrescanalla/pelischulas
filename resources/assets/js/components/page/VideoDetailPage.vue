@@ -257,12 +257,12 @@
             deleteVideo() {  
 
                 if( window.confirm('Are sure want to delete this comment?')) {
-                    vm.$Progress.start();
+                    this.$Progress.start();
                     axios.delete('/api/videos/' + video.id).then(function (res) {                       
-                        vm.$Progress.finish();
+                        this.$Progress.finish();
                     }).catch(function (error) {
                         console.log(error);
-                        vm.$Progress.finish();
+                        this.$Progress.finish();
                     });
                 }
             },
