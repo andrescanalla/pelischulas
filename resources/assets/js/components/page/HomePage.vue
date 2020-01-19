@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        PelisChulas
+                        Pelis Chulas
                     </div>
                     <div class="panel-body">
                         <video-thumb :list="videos.data"></video-thumb>
