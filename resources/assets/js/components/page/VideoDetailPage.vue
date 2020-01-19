@@ -255,16 +255,15 @@
 
             },
             deleteVideo() {  
-
-                if( window.confirm('Are sure want to delete this comment?')) {
+                if( window.confirm('Are sure want to delete this Video?')) {
                     this.$Progress.start();
                     axios.delete('/api/videos/' + this.id).then(function (res) {                       
-                        this.$Progress.finish();
-                         window.location.href= '/#/' ;
+                        this.$Progress.finish();                        
                     }).catch(function (error) {
                         console.log(error);
                         this.$Progress.finish();
                     });
+                    window.location.href= '/#/' ;
                 }
             },
 
