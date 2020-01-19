@@ -35,7 +35,7 @@
                                                 
                                                 <button disabled class="btn btn-default">56,454</button>
                                                 <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="another"><span class="glyphicon glyphicon-play"></span> Another Ones</button>
-                                                <div class="media" v-if="canComment()">
+                                                <div class="btn-group btn-group-sm" v-if="canComment()">
                                                     <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="deleteVideo" ><span class="glyphicon glyphicon-trash"></span> Borrar Video</button>
                                                 </div>
                                             </div>
@@ -258,7 +258,7 @@
 
                 if( window.confirm('Are sure want to delete this comment?')) {
                     this.$Progress.start();
-                    axios.delete('/api/videos/' + video.id).then(function (res) {                       
+                    axios.delete('/api/videos/' + this.id).then(function (res) {                       
                         this.$Progress.finish();
                     }).catch(function (error) {
                         console.log(error);
