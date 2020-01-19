@@ -260,6 +260,7 @@
                     this.$Progress.start();
                     axios.delete('/api/videos/' + this.id).then(function (res) {                       
                         this.$Progress.finish();
+                         window.location.href= '/#/' ;
                     }).catch(function (error) {
                         console.log(error);
                         this.$Progress.finish();
