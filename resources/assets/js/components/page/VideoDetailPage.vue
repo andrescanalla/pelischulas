@@ -35,7 +35,9 @@
                                                 
                                                 <button disabled class="btn btn-default">56,454</button>
                                                 <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="another"><span class="glyphicon glyphicon-play"></span> Another Ones</button>
-                                                <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="deleteVideo"><span class="glyphicon glyphicon-delete"></span> Borrar Video</button>
+                                                <div class="media" v-if="canComment()">
+                                                    <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="deleteVideo" ><span class="glyphicon glyphicon-trash"></span> Borrar Video</button>
+                                                </div>
                                             </div>
 
                                         </div>
