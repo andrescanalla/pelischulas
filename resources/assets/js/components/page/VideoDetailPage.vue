@@ -35,6 +35,7 @@
                                                 
                                                 <button disabled class="btn btn-default">56,454</button>
                                                 <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="another"><span class="glyphicon glyphicon-play"></span> Another One</button>
+                                            <button class="btn btn-subscribe btn-primary" style="margin-left:15px" v-on:click="deleteVideo"><span class="glyphicon glyphicon-delete"></span> Borrar</button>
                                             </div>
 
                                         </div>
@@ -250,6 +251,13 @@
                
                 console.log('Another', max , ran, src);
 
+            },
+
+            deleteVideo(){
+                 this.$Progress.start();
+                axios.delete('/api/videos/' + this.id + '/', this.video ).then((res) => {
+                    this.$Progress.finish();
+                });
             },
 
             videoThumb(thumb) {
